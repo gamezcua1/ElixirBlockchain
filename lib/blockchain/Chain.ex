@@ -8,7 +8,11 @@ defmodule Blockchain.Chain do
   
 
   def reset_current_transactions(chain) do
-    %Chain{}
+    %Chain{chain | current_transactions: []}
+  end
+
+  def add_block(chain, block) do
+    %Chain{chain | chain: [ block | chain.chain]}
   end
   
 end
