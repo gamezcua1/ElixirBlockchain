@@ -4,7 +4,7 @@ defmodule Blockchain do
   alias Blockchain.Transaction, as: Transaction
   
   def test() do
-    {chain, _} = Chain.new_chain
+    chain = Chain.new_chain
     chain = Transaction.new_transaction(chain, "Sender#{:rand.uniform(10)}", :rand.uniform(10000), :rand.uniform(99999999))
     {chain, _} = Block.new_block(chain, "proof1")
     chain = Transaction.new_transaction(chain, "Sender#{:rand.uniform(10)}", :rand.uniform(10000), :rand.uniform(99999999))

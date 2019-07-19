@@ -6,7 +6,8 @@ defmodule Blockchain.Chain do
             current_transactions: []
   
   def new_chain do
-    Block.new_block(%Chain{}, 100, 1)
+    {chain, _ } = %Chain{} |> Block.new_block(100, 1)
+    chain
   end
 
   def reset_current_transactions(chain) do
