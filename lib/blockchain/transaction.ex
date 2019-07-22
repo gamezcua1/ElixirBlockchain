@@ -6,8 +6,6 @@ defmodule Blockchain.Transaction do
 
   def new_transaction(chain, sender, recipient, amount) do
     chain
-    |> Chain.add_transaction(%Transaction{sender: sender, 
-                                          recipient: recipient, 
-                                          amount: amount})
+    |> Chain.add_transaction(%Transaction{sender: sender, recipient: recipient, amount: amount})
   end
 end

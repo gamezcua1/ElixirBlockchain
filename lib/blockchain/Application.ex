@@ -3,7 +3,7 @@ defmodule Blockchain.Application do
 
   use Application
 
-  def start(_type, _args) do
+  def start() do
     # List all child processes to be supervised
     children = [
       # Use Plug.Cowboy.child_spec/3 to register our endpoint as a plug
@@ -13,8 +13,8 @@ defmodule Blockchain.Application do
         options: [port: 4001]
       )
     ]
-    
-    Blockchain.Server.start_link
+
+    Blockchain.Server.start_link()
 
     # for other strategies and supported options
     opts = [strategy: :one_for_one, name: Blockchain.Supervisor]
